@@ -4,9 +4,6 @@ General: This project will begin a much larger evolutionary process. For now, th
 
 The MVP will use a news api, https://newsapi.org/
 
-##MVP User Stories
-Upon visiting the page, users will have the option to enter as guests or login (if they are not already logged in). The MVP will be a responsive website.
-
 ####User Stories
 _There will only be guest users for the MVP_
 
