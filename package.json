@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/poeticinjustice/fastfeed/issues"
   },
-  "homepage": "https://github.com/poeticinjustice/fastfeed#readme"
+  "homepage": "https://github.com/poeticinjustice/fastfeed#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  }
 }
