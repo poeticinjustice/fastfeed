@@ -31,3 +31,6 @@ For gitignore and as a general resource, I used my aggrenews project which relie
 https://github.com/poeticinjustice/aggrenews/tree/master
 https://github.com/ga-students/wdi-nyc-purple-rain-students/tree/master/unit2/d11/instructor/express_auth_with_students
 http://stackoverflow.com/questions/18160342/jquery-how-to-trigger-click-event-on-pressing-enter-key
+
+Also referred to:
+https://github.com/ga-students/wdi-nyc-purple-rain-students/blob/master/unit3/d13/instructor/muviehaus
