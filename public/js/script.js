@@ -13,7 +13,7 @@ $(document).ready(function(){
         $(results).each(function(index) {
           var content = results[index];
             $('#newsapi_column ul').append(
-            $('<li />', {html: '<a href="' + content.url + '" target="_blank">'+ content.title +'</a>'})
+            $('<li />', {html: '<a href="' + content.url + '" target="_blank"><strong>'+ content.title +'</a></strong><br>' + content.description})
           );
         });
       },
