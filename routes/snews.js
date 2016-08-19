@@ -3,10 +3,6 @@
 
 const router  = require('express').Router();
 
-const { getSavedStories,
-        getSavedStory,
-        addStory
-      }       = require('../db/db');
 
 router.get('/' getSavedStories, (req, res) => {
   res.render('/stories')

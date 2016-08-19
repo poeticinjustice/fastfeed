@@ -15,13 +15,14 @@
       <h3>News Feed</h3>
     </div>
     <div id="newsChoose">
-      <p>categories still need to be created</p>
+
+<!--       <p>to be created</p>
       <select name="newsCategory">
         <% categories.forEach(category => { %>
           <option value="<%= category %>"><%= category %></option>
         <% }); %>
       </select>
-      <button id="newsCategory" type="submit">Choose</button> <br><br>
+      <button id="newsCategory" type="submit">Choose</button> <br><br> -->
 
       <select name="newsSource" id="newsSourceDrop">
         <% sources.forEach(source => { %>
@@ -42,6 +43,13 @@
   <div id="snews_column">
     <ul>
       <h3>Saved Stories</h3>
+      <% savedStories.forEach( story => { %>
+      <li>
+        <a href="/stories/<%= story.story_id %>">
+          <%= story.story_title %> <%= story.story_desc %>
+        </a>
+      </li>
+      <% }); %>
 
     </ul>
   </div>

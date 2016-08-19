@@ -51,9 +51,8 @@ const pgConfig        = { host: process.env.PG_HOST,
   }
 
 
+module.exports = { getSavedStories, getSavedStory, addStory};
+
   // followed examples from Bobby's exercise re postgreSQL database manipulation to create CRUD functions
   // https://github.com/ga-students/wdi-nyc-purple-rain-students/blob/master/unit3/d03/instructor/express_postgres_solution/db/db.js
-
-
-
-
+  // **may move to models later**
