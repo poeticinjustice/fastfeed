@@ -12,10 +12,12 @@
 
   <div id="left_column">
     <div id="description">
-      <p>Test recode</p>
+      <h3>News Feed</h3>
     </div>
     <div id="test">
-      <button id="newsButton" class="search search-content" type='submit'>Submit</button>
+      <button id="techButton" class="search search-content" type='submit'>tech</button><br><br>
+      <button id="hackernewsButton" class="search search-content" type='submit'>hackernews</button><br><br>
+      <button id="recodeButton" class="search search-content" type='submit'>recode</button><br><br>
     </div>
   </div>
 
@@ -29,13 +31,7 @@
   <div id="snews_column">
     <ul>
       <h3>Saved Stories</h3>
-      <% news.forEach( story => { %>
-      <li>
-        <a href="/stories/<%= story.story_id %>">
-          <%= story.story_title %> <%= story.story_desc %>
-        </a>
-      </li>
-      <% }); %>
+
     </ul>
   </div>
 </body>
