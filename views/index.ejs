@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <% include ./partials/head %>
 </head>
-<body>
-  <h1>Hello News World</h1>
-  <div id="description">
-    <p>Test recode</p>
-  </div>
-  <div id="test">
-    <button id="newsButton" class="search search-content" type='submit'>Submit</button>
-  </div>
-  <div id="results">
-    <div id="newsapi_column">
-      <div id="nalogo"></div>
-      <ul>
-        <!-- News API Content-->
-        Click on the button above to replace me with news!
-      </ul>
-    </div>
 
+<body>
+  <header id="header" class="none">
+    <h1>Hello News World</h1>
+  </header><!-- /header -->
+
+  <div id="left_column">
+    <div id="description">
+      <p>Test recode</p>
+    </div>
+    <div id="test">
+      <button id="newsButton" class="search search-content" type='submit'>Submit</button>
+    </div>
+  </div>
+
+  <div id="newsapi_column">
+    <ul>
+      <!-- News API Content-->
+      Click on the button above to the left to replace me me with news!
+    </ul>
+  </div>
+
+  <div id="snews_column">
+    <ul>
+      <!-- Saved Content-->
+      All yer saved stuff will go here.
+    </ul>
+  </div>
+</body>
 </html>

@@ -1,3 +1,28 @@
 h1 {
-  color: blue;
+  text-align: center;
+}
+#left_column {
+  width: 16%;
+  float: left;
+  overflow: hidden;
+  border: solid black;
+  margin: 2% .32%;
+}
+#newsapi_column {
+  width: 40%;
+  float: left;
+  overflow: hidden;
+  border: solid green;
+  margin: 2% .32%;
+}
+#snews_column {
+  width: 40%;
+  float: left;
+  overflow: hidden;
+  border: solid red;
+  margin: 2% .32%;
+}
+ul {
+  list-style-type: none;
+  padding: 2%;
 }

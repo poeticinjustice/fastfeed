@@ -34,3 +34,8 @@ http://stackoverflow.com/questions/18160342/jquery-how-to-trigger-click-event-on
 
 Also referred to:
 https://github.com/ga-students/wdi-nyc-purple-rain-students/blob/master/unit3/d13/instructor/muviehaus
+
+Followed examples from Bobby's exercise re postgreSQL database manipulation to create CRUD functions:
+https://github.com/ga-students/wdi-nyc-purple-rain-students/blob/master/unit3/d03/instructor/express_postgres_solution/db/db.js
+
+
