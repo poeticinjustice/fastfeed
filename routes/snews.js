@@ -9,10 +9,11 @@ const { getSavedStories,
       }       = require('../db/db');
 
 router.get('/' getSavedStories, (req, res) => {
-  res.render('stories/')
+  res.render('/stories')
 })
 
 
+module.exports = { getSavedStories };
 
 
 
