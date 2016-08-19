@@ -14,10 +14,21 @@
     <div id="description">
       <h3>News Feed</h3>
     </div>
-    <div id="test">
-      <button id="techButton" class="search search-content" type='submit'>tech</button><br><br>
-      <button id="hackernewsButton" class="search search-content" type='submit'>hackernews</button><br><br>
-      <button id="recodeButton" class="search search-content" type='submit'>recode</button><br><br>
+    <div id="newsChoose">
+      <p>categories still need to be created</p>
+      <select name="newsCategory">
+        <% categories.forEach(category => { %>
+          <option value="<%= category %>"><%= category %></option>
+        <% }); %>
+      </select>
+      <button id="newsCategory" type="submit">Choose</button> <br><br>
+
+      <select name="newsSource" id="newsSourceDrop">
+        <% sources.forEach(source => { %>
+          <option value="<%= source %>"><%= source %></option>
+        <% }); %>
+      </select>
+      <button id="newsSource" type="submit">Select</button> <br><br>
     </div>
   </div>
 

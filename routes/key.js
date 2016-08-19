@@ -5,26 +5,22 @@ const request   = require('request');
 
 const naKey     = process.env.NEWSAPI_KEY;
 
-const tech      = ['/hackernews', '/recode']
-
-router.get('/tech', function(req, res) {
-  request(tech,
+router.get('/categoryChoice', function(req, res) {
+  console.log("req.query = ", req.query)
+  var categoryChoice = req.query.categoryChoice
+  console.log(categoryChoice);
+  request('https://newsapi.org/v1/articles?source='+categoryChoice+'&sortBy=top&apiKey='+naKey,
     function (error, response, body) {
       res.send(body);
     }
   )
 })
 
-router.get('/hackernews', function(req, res) {
-  request('https://newsapi.org/v1/articles?source=hackernews&sortBy=top&apiKey='+naKey,
-    function (error, response, body) {
-      res.send(body);
-    }
-  )
-})
-
-router.get('/recode', function(req, res) {
-  request('https://newsapi.org/v1/articles?source=recode&sortBy=top&apiKey='+naKey,
+router.get('/newsSourceChoice', function(req, res) {
+  console.log("req.query = ", req.query)
+  var newsSourceChoice = req.query.newsSourceChoice
+  console.log(newsSourceChoice);
+  request('https://newsapi.org/v1/articles?source='+newsSourceChoice+'&sortBy=top&apiKey='+naKey,
     function (error, response, body) {
       res.send(body);
     }
@@ -33,6 +29,3 @@ router.get('/recode', function(req, res) {
 
 module.exports = router;
 
-
-// pass array
-// http://stackoverflow.com/questions/15350025/express-js-single-routing-handler-for-multiple-routes-in-a-single-line
