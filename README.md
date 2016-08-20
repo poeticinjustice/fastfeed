@@ -26,6 +26,9 @@ I want to delete articles that I’ve previously favorited.
 * Bootstrap
 * newsapi.org
 
+Thanks
+Thanks Mike Stenzler for much help on this
+
 Resources
 For gitignore and as a general resource, I used my aggrenews project which relied on Bobby's express auth and jQuery help from Stack Overflow:
 https://github.com/poeticinjustice/aggrenews/tree/master
@@ -38,4 +41,5 @@ https://github.com/ga-students/wdi-nyc-purple-rain-students/blob/master/unit3/d1
 Followed examples from Bobby's exercise re postgreSQL database manipulation to create CRUD functions:
 https://github.com/ga-students/wdi-nyc-purple-rain-students/blob/master/unit3/d03/instructor/express_postgres_solution/db/db.js
 
+http://stackoverflow.com/questions/8978328/get-the-value-of-a-dropdown-in-jquery
 

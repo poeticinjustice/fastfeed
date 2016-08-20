@@ -3,27 +3,6 @@
 $(document).ready(function(){
   console.log('/public/js/script.js is loaded')
 
-  $('#newsSource').on('click', function(){
-    var newsSourceChoice = $('#newsSourceDrop option:selected').text();
-    $('#newsapi_column ul').empty();
-    $.ajax({
-      url: '/key/newsSourceChoice',
-      dataType: 'json',
-      data: {newsSourceChoice: newsSourceChoice},
-      success: function (data) {
-        var results = data.articles;
-        $(results).each(function(index) {
-          var content = results[index];
-            $('#newsapi_column ul').append(
-            $('<li />', {html: '<a href="' + content.url + '" target="_blank"><strong>'+ content.title +'</a></strong><br>' + content.description + ' <button>Add</button>'})
-          );
-        });
-      },
-      error: function () {
-        $("#newsapi_column").html('<p>Error: ' + error + '</p>');
-      }
-    });
-  });
   $('#newsCategory').on('click', function(){
     var categoryChoice = $('#categoryDrop option:selected').text();
     $('#newsapi_column ul').empty();
@@ -36,7 +15,29 @@ $(document).ready(function(){
         $(results).each(function(index) {
           var content = results[index];
             $('#newsapi_column ul').append(
-            $('<li />', {html: '<a href="' + content.url + '" target="_blank"><strong>'+ content.title +'</a></strong><br>' + content.description + ' <button>Add</button>'})
+            $('<li />', {html: '<a href="' + content.url + '" target="_blank"><strong class="story_title">'+ content.title +'</strong></a><br><span class="story_desc">' + content.description + '</span><button class="addNews">Add</button>'})
+          );
+        });
+      },
+      error: function (error) {
+        $("#newsapi_column").html('<p>Error: ' + error + '</p>');
+      }
+    });
+  });
+
+  $('#newsSource').on('click', function(){
+    var newsSourceChoice = $('#newsSourceDrop option:selected').text();
+    $('#newsapi_column ul').empty();
+    $.ajax({
+      url: '/key/newsSourceChoice',
+      dataType: 'json',
+      data: {newsSourceChoice: newsSourceChoice},
+      success: function (data) {
+        var results = data.articles;
+        $(results).each(function(index) {
+          var content = results[index];
+            $('#newsapi_column ul').append(
+            $('<li />', {html: '<a href="' + content.url + '" target="_blank"><strong><span class="story_title">'+ content.title +'</span></strong></a><br><span class="story_desc">' + content.description + '</span><button class="addNews">Add</button>'}).attr('class', 'newsRow')
           );
         });
       },
@@ -45,6 +46,33 @@ $(document).ready(function(){
       }
     });
   });
+
+  function addNewsStory(e){
+    console.log("CLICKED on addNews");
+    var $target=$(e.target);
+    var $li = $target.closest('.newsRow');
+    console.log('li = ', $li);
+    var $title = $li.find('.story_title').eq(0).text();
+    var $desc = $li.children('.story_desc').eq(0).text();
+    console.log('title = ', $title);
+    console.log('desc = ', $desc);
+    $.ajax({
+      url: '/addNews',
+      dataType: 'json',
+      data: {story_title: $title, story_desc: $desc},
+      type: 'POST',
+      success: function (data) {
+            $('#snews_column ul').append(
+            $('<li />', { html: `<a href="/stories/${data.id}">${$title}</a><br>${$desc}` }
+            ))
+      },
+      error: function (error) {
+        $("#newsapi_column").html('<p>Error: ' + error + '</p>');
+      }
+    });
+  }
+
+  $('#newsapi_column').on('click', '.addNews', addNewsStory);
 
 });
 

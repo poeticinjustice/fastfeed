@@ -46,7 +46,8 @@
       <% savedStories.forEach( story => { %>
       <li>
         <a href="/stories/<%= story.story_id %>">
-          <%= story.story_title %> <%= story.story_desc %>
+          <strong><%= story.story_title %></strong><br>
+          <%= story.story_desc %>
         </a>
       </li>
       <% }); %>

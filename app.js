@@ -15,7 +15,7 @@ const path            = require('path');
 
 // Routes
 const homeRoute       = require('./routes/home');
-const keyRoute        = require('./routes/key')
+const keyRoute        = require('./routes/key');
 
 // declare app and port
 const app             = express();
@@ -25,6 +25,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/', homeRoute);
