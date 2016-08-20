@@ -10,7 +10,7 @@
     <h1>Hello News World</h1>
   </header><!-- /header -->
 
-  <div id="left_column">
+  <div id="left_column" class="col-md-2">
     <div id="description">
       <h3>News Feed</h3>
     </div>
@@ -33,16 +33,17 @@
     </div>
   </div>
 
-  <div id="newsapi_column">
+  <div id="newsapi_column" class="col-md-5">
+    <h3>News Stories</h3>
     <ul>
       <!-- News API Content-->
-      Click on the button above to the left to replace me me with news!
+      Select your source on the left to replace me me with news!
     </ul>
   </div>
 
-  <div id="snews_column">
+  <div id="snews_column" class="col-md-5">
+    <h3>Saved Stories</h3>
     <ul>
-      <h3>Saved Stories</h3>
       <% savedStories.forEach( story => { %>
       <li>
         <a href="/stories/<%= story.story_id %>">

@@ -1,7 +1,8 @@
 h1 {
   text-align: center;
 }
-#left_column {
+
+/*#left_column {
   width: 16%;
   float: left;
   overflow: hidden;
@@ -21,7 +22,8 @@ h1 {
   overflow: hidden;
   border: solid red;
   margin: 2% .32%;
-}
+}*/
+
 ul {
   list-style-type: none;
   padding: 2%;
