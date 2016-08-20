@@ -66,9 +66,10 @@ $(document).ready(function(){
             $('<li />', { html: `<a href="/stories/${data.id}">${$title}</a><br>${$desc}` }
             ))
       },
-      error: function (error) {
-        $("#newsapi_column").html('<p>Error: ' + error + '</p>');
-      }
+      // error: function (error) {
+      //   $("#newsapi_column").html('<p>Error: ' + error + '</p>');
+      //   console.log('error from script.js ', error)
+      // }
     });
   }
 

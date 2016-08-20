@@ -4,7 +4,8 @@ const router          = require('express').Router();
 
 const { getSavedStories,
         getSavedStory,
-        addStory
+        addStory,
+        updateStory
       }               = require('../db/db');
 
 const sendJSONresp = (req,res)=>res.json(res.rows);
@@ -22,6 +23,7 @@ router.get('/', getSavedStories, function(req,res) {
 router.post('/addNews', addStory, function(req, res) {
   res.status(200).send('story saved');
 })
+
 
 // // go to single story
 // router.get('/:story', getSavedStory, (req, res) => {

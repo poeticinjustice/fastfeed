@@ -16,6 +16,7 @@ const path            = require('path');
 // Routes
 const homeRoute       = require('./routes/home');
 const keyRoute        = require('./routes/key');
+const storiesRoute    = require('./routes/stories');
 
 // declare app and port
 const app             = express();
@@ -30,6 +31,8 @@ app.use(bodyParser.json());
 
 app.use('/', homeRoute);
 app.use('/key', keyRoute);
+app.use('/stories', storiesRoute);
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 

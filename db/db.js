@@ -23,7 +23,7 @@ const pgConfig        = { host: process.env.PG_HOST,
   function getSavedStory(req, res, next) {
     db.one(`SELECT *
             FROM news
-            WHERE user_id=$1`, [req.params.id])
+            WHERE story_id=$1`, [req.params.id])
       .then(data => {
         res.rows = data;
         next();
@@ -50,8 +50,24 @@ const pgConfig        = { host: process.env.PG_HOST,
     );
   }
 
+  function updateStory(req, res, next) {
+    db.none(`UPDATE news SET
+           (story_title, story_desc) =
+           ($1, $2) where story_id = $3;`,
+           [req.body.story_title, req.body.story_desc, req.body.story_id])
+      .then( data => {
+        console.log('New story added from db.js');
+        next();
+      })
+      .catch( error => {
+        console.log('Error from addStory function (db.js)', error)
+      }
+    );
+  }
 
-module.exports = { getSavedStories, getSavedStory, addStory};
+
+
+module.exports = { getSavedStories, getSavedStory, addStory, updateStory};
 
   // followed examples from Bobby's exercise re postgreSQL database manipulation to create CRUD functions
   // https://github.com/ga-students/wdi-nyc-purple-rain-students/blob/master/unit3/d03/instructor/express_postgres_solution/db/db.js
