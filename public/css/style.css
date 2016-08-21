@@ -2,6 +2,10 @@ h1 {
   text-align: center;
 }
 
+.intro {
+  margin: 1% 10%;
+}
+
 /*#left_column {
   width: 16%;
   float: left;

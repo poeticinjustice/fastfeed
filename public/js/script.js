@@ -86,7 +86,12 @@ $(document).ready(function(){
       dataType: 'json',
       data: { story_id: story_id },
       type: 'DELETE',
-      success: console.log('deleted')
+      success: function(data) {
+        window.location=data;
+      },
+      error: function(error) {
+        console.log(error);
+      }
     });
   }
 
@@ -95,3 +100,5 @@ $(document).ready(function(){
 });
 
 // http://stackoverflow.com/questions/8978328/get-the-value-of-a-dropdown-in-jquery
+// fix delete error
+// http://stackoverflow.com/questions/25351870/express-response-takes-request-method

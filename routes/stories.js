@@ -20,7 +20,7 @@ router.post('/update_story', updateStory, function(req, res) {
 })
 
 router.delete('/:id', deleteStory, function(req, res) {
-    res.redirect('/');
+    res.send('/');
 });
 
 module.exports = router;

@@ -43,3 +43,6 @@ https://github.com/ga-students/wdi-nyc-purple-rain-students/blob/master/unit3/d0
 
 http://stackoverflow.com/questions/8978328/get-the-value-of-a-dropdown-in-jquery
 
+fix delete error:
+http://stackoverflow.com/questions/25351870/express-response-takes-request-method
+
