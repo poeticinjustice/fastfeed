@@ -75,6 +75,23 @@ $(document).ready(function(){
 
   $('#newsapi_column').on('click', '.addNews', addNewsStory);
 
+  function deleteNewsStory(e){
+    console.log("CLICKED on deleteNews");
+    var $target=$(e.target);
+    var $li = $target.closest('.newsRow');
+    console.log('li = ', $li);
+    var story_id = $target.attr('data-story-id')
+    $.ajax({
+      url: '/stories/' + story_id,
+      dataType: 'json',
+      data: { story_id: story_id },
+      type: 'DELETE',
+      success: console.log('deleted')
+    });
+  }
+
+  $('#snews_column').on('click', '.deleteNews', deleteNewsStory);
+
 });
 
 // http://stackoverflow.com/questions/8978328/get-the-value-of-a-dropdown-in-jquery

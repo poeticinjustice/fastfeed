@@ -56,18 +56,32 @@ const pgConfig        = { host: process.env.PG_HOST,
            ($1, $2) where story_id = $3;`,
            [req.body.story_title, req.body.story_desc, req.body.story_id])
       .then( data => {
-        console.log('New story added from db.js');
+        console.log('Updated story from db.js');
         next();
       })
       .catch( error => {
-        console.log('Error from addStory function (db.js)', error)
+        console.log('Error from updateStory function (db.js)', error)
+      }
+    );
+  }
+
+  function deleteStory(req, res, next) {
+    db.none(`DELETE FROM news
+             WHERE story_id = $1;`,
+           [req.params.id])
+      .then( data => {
+        console.log('Deleted from db.js');
+        next();
+      })
+      .catch( error => {
+        console.log('Error from deleteStory function (db.js)', error)
       }
     );
   }
 
 
 
-module.exports = { getSavedStories, getSavedStory, addStory, updateStory};
+module.exports = { getSavedStories, getSavedStory, addStory, updateStory, deleteStory};
 
   // followed examples from Bobby's exercise re postgreSQL database manipulation to create CRUD functions
   // https://github.com/ga-students/wdi-nyc-purple-rain-students/blob/master/unit3/d03/instructor/express_postgres_solution/db/db.js

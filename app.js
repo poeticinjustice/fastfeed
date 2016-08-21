@@ -12,6 +12,7 @@ const express         = require('express');
 const logger          = require('morgan');
 const bodyParser      = require('body-parser');
 const path            = require('path');
+const methodOverride  = require('method-override');
 
 // Routes
 const homeRoute       = require('./routes/home');
@@ -33,6 +34,8 @@ app.use('/', homeRoute);
 app.use('/key', keyRoute);
 app.use('/stories', storiesRoute);
 
+// for deleting
+app.use(methodOverride('_method'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 

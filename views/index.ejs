@@ -47,9 +47,8 @@
       <% savedStories.forEach( story => { %>
       <li>
         <a href="/stories/<%= story.story_id %>">
-          <strong><%= story.story_title %></strong><br>
-          <%= story.story_desc %>
-        </a>
+          <strong><%= story.story_title %></strong></a><br>
+          <%= story.story_desc %><button class="deleteNews" type="submit" data-story-id="<%= story.story_id %>">Delete</button>
       </li>
       <% }); %>
 
