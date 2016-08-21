@@ -7,12 +7,12 @@
 
 <body>
 
-<form action="/stories/update_story" method="post" accept-charset="utf-8">
+<form action="/stories/update_story" method="post" accept-charset="utf-8" class="intro">
   <input type="hidden" name="story_id" value="<%=story.story_id %>">
-  <label for="">Title</label>
-  <input type="text" name="story_title" value="<%= story.story_title %>"/><br>
-  <label for="">Description</label>
-  <textarea name="story_desc"><%= story.story_desc %></textarea>
+  <label for="">Title</label><br>
+  <input type="text" name="story_title" value="<%= story.story_title %>" class="title"/><br>
+  <label for="">Description</label><br>
+  <textarea name="story_desc" class="desc"><%= story.story_desc %></textarea><br>
   <input type="submit" value="update story" />
 </form>
 

@@ -6,6 +6,14 @@ h1 {
   margin: 1% 10%;
 }
 
+.title, .desc {
+  width: 80%;
+}
+
+.desc {
+  height: 8em;
+}
+
 /*#left_column {
   width: 16%;
   float: left;
