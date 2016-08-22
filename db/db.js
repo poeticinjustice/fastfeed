@@ -25,7 +25,7 @@ const pgConfig        = { host: process.env.PG_HOST,
                           user: process.env.PG_USER,
                           password: process.env.PG_PASSWORD };
 
-  const db            = process.env.DATABASE_URL ? pg(process.env.DATABASE_URL)  : pg(pgConfig);
+  const db            = pg(pgConfig);
 
   function getSavedStories(req, res, next) {
     db.any(`SELECT * FROM news`)
