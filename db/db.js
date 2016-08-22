@@ -1,4 +1,18 @@
-const pg              = require('pg-promise')({});
+// const pg              = require('pg-promise')({});
+
+const pg              = require('pg');
+
+pg.defaults.ssl       = true;
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
+  client
+    .query('SELECT table_schema,table_name FROM information_schema.tables;')
+    .on('row', function(row) {
+      console.log(JSON.stringify(row));
+    });
+});
 
 const pgConfig        = { host: process.env.PG_HOST,
                           port: process.env.PG_PORT,
@@ -6,7 +20,7 @@ const pgConfig        = { host: process.env.PG_HOST,
                           user: process.env.PG_USER,
                           password: process.env.PG_PASSWORD };
 
-  const db              = pg(pgConfig);
+  const db            = pg(pgConfig);
 
   function getSavedStories(req, res, next) {
     db.any(`SELECT * FROM news`)

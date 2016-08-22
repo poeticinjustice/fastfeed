@@ -2,11 +2,13 @@
 
 // building app
 
-const env              = process.env.NODE_ENV || 'development';
-const DEV              = env==='development';
-const dotenv           = (DEV) ? require('dotenv').config() : undefined;
+// const env              = process.env.NODE_ENV || 'development';
+// const DEV              = env==='development';
+// const dotenv           = (DEV) ? require('dotenv').config() : undefined;
 
 // above from https://github.com/ga-students/wdi-nyc-purple-rain-students/blob/master/unit3/d13/instructor/muviehaus/server.js
+
+
 
 const express         = require('express');
 const logger          = require('morgan');
