@@ -1,19 +1,19 @@
-const pgc              = require('pg');
+// const pgc              = require('pg');
 
-pgc.defaults.ssl       = true;
-pgc.connect(process.env.DATABASE_URL, function(err, client) {
-  if (err) throw err;
-  console.log('Connected to postgres! Getting schemas...');
+// pgc.defaults.ssl       = true;
+// pgc.connect(process.env.DATABASE_URL, function(err, client) {
+//   if (err) throw err;
+//   console.log('Connected to postgres! Getting schemas...');
 
-  client
-    .query('SELECT table_schema,table_name FROM information_schema.tables;')
-    .on('row', function(row) {
-      console.log(JSON.stringify(row));
-    });
-});
+//   client
+//     .query('SELECT table_schema,table_name FROM information_schema.tables;')
+//     .on('row', function(row) {
+//       console.log(JSON.stringify(row));
+//     });
+// });
 
-// for above; will need to rename tables after getting it to connect
-// https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-node-js
+// // for above; will need to rename tables after getting it to connect
+// // https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-node-js
 
 const pg              = require('pg-promise')({});
 
