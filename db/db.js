@@ -1,5 +1,3 @@
-// const pg              = require('pg-promise')({});
-
 const pgc              = require('pg');
 
 pgc.defaults.ssl       = true;
@@ -13,6 +11,11 @@ pgc.connect(process.env.DATABASE_URL, function(err, client) {
       console.log(JSON.stringify(row));
     });
 });
+
+// for above; will need to rename tables after getting it to connect
+// https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-node-js
+
+const pg              = require('pg-promise')({});
 
 const pgConfig        = { host: process.env.PG_HOST,
                           port: process.env.PG_PORT,
