@@ -1,9 +1,9 @@
 // const pg              = require('pg-promise')({});
 
-const pg              = require('pg');
+const pgc              = require('pg');
 
-pg.defaults.ssl       = true;
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pgc.defaults.ssl       = true;
+pgc.connect(process.env.DATABASE_URL, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
