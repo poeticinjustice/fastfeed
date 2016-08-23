@@ -5,7 +5,7 @@ General: This project will begin a much larger evolutionary process. For now, th
 The MVP will use a news api, https://newsapi.org/
 
 ####Deployed site
-https://infinite-tundra-58529.herokuapp.com/
+fastfeed.herokuapp.com
 
 ####Summary
 This application is a news reader that allows visitors to edit the headlines and summaries of stories that they save for personal reference. Just like their burgers, people don't always want news exactly the way some journalist presents it. Sure, depending on the news organization, the journalist may be educated and understand a thing or two about integrity, but this is a free country, and I like to have things my way, including the news. This app lets me do that. It gives me freedom.
