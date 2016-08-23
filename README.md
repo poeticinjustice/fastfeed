@@ -8,7 +8,11 @@ The MVP will use a news api, https://newsapi.org/
 https://infinite-tundra-58529.herokuapp.com/
 
 ####Summary
+This application is a news reader that allows visitors to edit the headlines and summaries of stories that they save for personal reference. Just like their burgers, people don't always want news exactly the way some journalist presents it. Sure, depending on the news organization, the journalist may be educated and understand a thing or two about integrity, but this is a free country, and I like to have things my way, including the news. This app lets me do that. It gives me freedom.
 
+To use the app, go to the home page. There will be a drop down menu under the heading, "News Feed" that will allow you to choose from a number of news feeds. Choose one and click on the select button. That will generate a feed under the heading, "News Stories." With the feed, you will see several story titles and brief summaries. By clicking on the title of the news story, a new window will pop up and lead you to the original link. You can also save the story by clicking on the "Add" button.
+
+Once the story has been saved, it will appear in the "Saved Stories" column after you refresh the page. (This app likes proactive users for now). You can also delete the story and it will disappear, again, after you refresh the page. If you're not satisfied with the title or description of the saved story though, you can edit it yourself! Click on the title of the story, and you will be brought to a form where you can edit the content of your story. Click on "update story," and you've updated it!
 
 ####User Stories
 _There will only be guest users for the MVP_
@@ -40,7 +44,7 @@ Once I've favorited a feed, I would like to be able to edit the title and descri
 ![fastfeed wireframe](./fastfeed_wireframe.png "fastfeed wireframe")
 
 ####ERD
-![fastfeed erd](./defeeded_erd.png "fastfeed erd")
+![fastfeed erd](./fastfeed_erd.png "fastfeed erd")
 
 
 ####Thanks
